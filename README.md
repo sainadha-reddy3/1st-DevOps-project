@@ -22,19 +22,8 @@ It shows how Docker images, containers, and the underlying components work toget
 ---
 
 ## 🔁 Flowchart – How Everything Works
+<img width="332" height="698" alt="image" src="https://github.com/user-attachments/assets/81c12886-a517-401d-8ccb-d853a7976cbb" />
 
-```mermaid
-flowchart TD
-A[Write FastAPI app (main.py)] --> B[Create Dockerfile]
-B --> C[docker build -t fastapi-demo .]
-C --> D[Docker pulls base image (Python)]
-D --> E[Layers built: copy files + install deps]
-E --> F[Image created: fastapi-demo]
-F --> G[docker run -d -p 8000:8000 fastapi-demo]
-G --> H[Container starts with Uvicorn server]
-H --> I[App accessible at http://localhost:8000]
-I --> J[FastAPI responds inside container]
-⚙️ Step-by-Step Process
 🧱 1. Build the Image
 bash
 Copy code
